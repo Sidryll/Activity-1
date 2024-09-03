@@ -1,0 +1,115 @@
+:root {
+    --primary-color: #4a90e2;
+    --secondary-color: #f5a623;
+    --background-color: #f9f9f9;
+    --text-color: #333;
+    --completed-color: #7ed321;
+}
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+}
+h1 {
+    text-align: center;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+#task-form {
+    display: flex;
+    margin-bottom: 20px;
+}
+#task-input {
+    flex-grow: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px 0 0 4px;
+}
+#add-task {
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    border-radius: 0 4px 4px 0;
+}
+#add-task:hover {
+    background-color: #357ae8;
+}
+#task-list {
+    list-style-type: none;
+    padding: 0;
+}
+.task-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    margin-bottom: 10px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    transition: all 0.3s;
+}
+.task-item:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.task-checkbox {
+    margin-right: 10px;
+}
+.task-text {
+    flex-grow: 1;
+    font-size: 16px;
+}
+.task-actions {
+    display: flex;
+    gap: 10px;
+}
+.task-actions button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    transition: color 0.3s;
+}
+.edit-btn { color: var(--secondary-color); }
+.delete-btn { color: #e74c3c; }
+.completed .task-text {
+    text-decoration: line-through;
+    color: #888;
+}
+.completed .task-checkbox {
+    color: var(--completed-color);
+}
+#task-stats {
+    text-align: center;
+    margin-top: 20px;
+    font-size: 14px;
+    color: #888;
+}
+@media (max-width: 600px) {
+    .container {
+        padding: 10px;
+    }
+    #task-form {
+        flex-direction: column;
+    }
+    #task-input, #add-task {
+        width: 100%;
+        border-radius: 4px;
+        margin-bottom: 10px;
+    }
+}
